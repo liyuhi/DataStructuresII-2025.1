@@ -6,8 +6,10 @@ Desenvolva um jogo simples da forca no terminal, usando vetores e controle de fl
 #include <string.h>
 #include <ctype.h>
 
-#define max_erros 6
+// Número máximo de erros permitidos
+#define max_erros 6  
 
+// Função para desenhar o boneco da forca conforme o número de erros
 void mostrar_forca(int erros) {
     switch(erros) {
         case 0:
@@ -55,7 +57,7 @@ void mostrar_forca(int erros) {
             printf("  +---+\n");
             printf("  |   |\n");
             printf("  O   |\n");
-            printf(" /|\\  |\n");
+            printf(" /|\\  |\n");  // Braço direito adicionado
             printf("      |\n");
             printf("      |\n");
             printf("=========\n\n");
@@ -66,7 +68,7 @@ void mostrar_forca(int erros) {
             printf("  |   |\n");
             printf("  O   |\n");
             printf(" /|\\  |\n");
-            printf(" /    |\n");
+            printf(" /    |\n");  // Perna esquerda
             printf("      |\n");
             printf("=========\n\n");
             break;
@@ -76,7 +78,7 @@ void mostrar_forca(int erros) {
             printf("  |   |\n");
             printf("  O   |\n");
             printf(" /|\\  |\n");
-            printf(" / \\  |\n");
+            printf(" / \\  |\n");  // Perna direita (boneco completo)
             printf("      |\n");
             printf("=========\n\n");
             break;
@@ -84,37 +86,39 @@ void mostrar_forca(int erros) {
 }
 
 int main() {
-    const char palavra_secreta[] = "programa";
-    int tamanho = strlen(palavra_secreta);
-    char letras_descobertas[tamanho + 1];
-    char chutes[26];
-    int erros = 0;
-    int tentativas = 0;
+    const char palavra_secreta[] = "programa";  // Palavra fixa a ser adivinhada
+    int tamanho = strlen(palavra_secreta);      // Tamanho da palavra
+    char letras_descobertas[tamanho + 1];       // Vetor com as letras adivinhadas ou '_'
+    char chutes[26];                            // Vetor com os chutes feitos
+    int erros = 0;                              
+    int tentativas = 0;                         // Número de chutes já feitos
 
-    // Inicializa string das letras descobertas com underscores
+    // Inicializa o vetor com '_' para representar letras não descobertas
     for(int i = 0; i < tamanho; i++) {
         letras_descobertas[i] = '_';
     }
-    letras_descobertas[tamanho] = '\0';
+    letras_descobertas[tamanho] = '\0';  // Finaliza a string com NULL
 
     printf("=== Jogo da Forca ===\n");
 
+    // Laço principal do jogo
     while (erros < max_erros && strcmp(letras_descobertas, palavra_secreta) != 0) {
-        mostrar_forca(erros);
+        mostrar_forca(erros);  // Desenha a forca atual
         printf("Palavra: %s\n", letras_descobertas);
         printf("Erros: %d de %d\n", erros, max_erros);
         printf("Chutes já feitos: ");
         for(int i = 0; i < tentativas; i++) {
-            printf("%c ", chutes[i]);
+            printf("%c ", chutes[i]);  // Mostra letras já chutadas
         }
         printf("\n");
 
+        // Lê o chute do jogador
         printf("Digite uma letra: ");
         char chute;
-        scanf(" %c", &chute);
-        chute = tolower(chute);
+        scanf(" %c", &chute);  // O espaço antes do %c ignora espaços em branco
+        chute = tolower(chute);  // Converte para minúscula
 
-        // Verifica se já foi chutada
+        // Verifica se a letra já foi chutada antes
         int repetido = 0;
         for(int i = 0; i < tentativas; i++) {
             if(chutes[i] == chute) {
@@ -127,17 +131,19 @@ int main() {
             continue;
         }
 
+        // Adiciona o chute ao vetor de tentativas
         chutes[tentativas++] = chute;
 
-        // Verifica se a letra está na palavra
+        // Verifica se a letra existe na palavra
         int acertou = 0;
         for(int i = 0; i < tamanho; i++) {
             if(palavra_secreta[i] == chute) {
-                letras_descobertas[i] = chute;
+                letras_descobertas[i] = chute;  // Revela a letra na posição correta
                 acertou = 1;
             }
         }
 
+        // Atualiza erros ou confirma acerto
         if(!acertou) {
             erros++;
             printf("Letra incorreta!\n");
@@ -146,8 +152,8 @@ int main() {
         }
     }
 
+    // Exibe o resultado final
     mostrar_forca(erros);
-
     if(strcmp(letras_descobertas, palavra_secreta) == 0) {
         printf("Parabéns! Você ganhou! A palavra era: %s\n", palavra_secreta);
     } else {
@@ -156,3 +162,4 @@ int main() {
 
     return 0;
 }
+
