@@ -2,15 +2,15 @@
 
 Escreva uma função para criptografar uma mensagem usando a Cifra de César (deslocamento de letras).*/
 
-#include <stdio.h>
-#include <ctype.h>
+#include<stdio.h>
+#include<ctype.h>
 
 // Função para criptografar usando a Cifra de César
 void cifra_de_cesar(char *mensagem, int deslocamento) {
     int i = 0;
     char c;
     // Percorre cada caractere na string
-    while (mensagem[i] != '\\0') {
+    while (mensagem[i] != '\0') {
         c = mensagem[i];
         if (isalpha(c)) {
             char base = 'A';
