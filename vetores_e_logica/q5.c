@@ -2,7 +2,7 @@
 
 Dado dois vetores de inteiros, mostre os elementos comuns entre eles.*/
 
-#include stdio.h>
+#include<stdio.h>
 
 int main() {
     int vetor1[100], vetor2[100];
