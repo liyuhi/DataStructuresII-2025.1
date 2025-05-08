@@ -2,9 +2,9 @@
 
 Desenvolva um jogo simples da forca no terminal, usando vetores e controle de fluxo.*/
 
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
 
 // Número máximo de erros permitidos
 #define max_erros 6  
@@ -155,7 +155,7 @@ int main() {
     // Exibe o resultado final
     mostrar_forca(erros);
     if(strcmp(letras_descobertas, palavra_secreta) == 0) {
-        printf("Parabéns! Você ganhou! A palavra era: %s\n", palavra_secreta);
+        printf("Parabéns, você ganhou! A palavra era: %s\n", palavra_secreta);
     } else {
         printf("Game Over! Você perdeu. A palavra era: %s\n", palavra_secreta);
     }
