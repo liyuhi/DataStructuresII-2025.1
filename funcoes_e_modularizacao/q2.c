@@ -46,5 +46,4 @@ int main() {
     // Exibe o resultado da potência
     printf("%d^%d = %d\n", base, exp, resultado);
     
-    return 0; // Indica que o programa terminou com sucesso
-}
+    return 0; 
