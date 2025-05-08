@@ -2,8 +2,8 @@
 
 Crie uma struct Produto com nome, código, quantidade e preço. Permita cadastrar, buscar e listar produtos*/
 
-#include <stdio.h>
-#include <string.h>
+#include<stdio.h>
+#include<string.h>
 
 // Tamanho máximo para o nome do produto
 #define max_nome 100    
