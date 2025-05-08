@@ -4,8 +4,13 @@ Implemente uma função int potencia(int base, int expoente) que calcule potênc
 
 #include <stdio.h>
 
-//função para calcular potências sem pow
+//Função para calcular potências sem pow
 int potencia(int base, int exp) {
+    // Se o expoente for 0, retorna 1 (qualquer número elevado a 0 é 1)
+    if (exp == 0) {
+    return 1;
+}
+    
     int resultado = 1;
     
     for (int i = 0; i < exp; i++) {
@@ -22,7 +27,7 @@ int main() {
     printf("Digite o expoente: ");
     scanf("%d", &exp);
 
-    //verificando se o número digitado é negativo
+    //Verificando se o número digitado é negativo
     if (exp < 0) {
         printf("Digite um expoente não negativo.\n");
         return 1;
