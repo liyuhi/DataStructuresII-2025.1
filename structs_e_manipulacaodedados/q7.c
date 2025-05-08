@@ -20,8 +20,14 @@ int main() {
     scanf("%d", &n);
     getchar(); // limpa o buffer após leitura do número
 
+    if (n <= 0) {
+        printf("Número de alunos inválido.\n");
+        return 1;
+    }
+
     Aluno alunos[n];
 
+    printf("\n--- Cadastro de Alunos ---\n");
     for (i = 0; i < n; i++) {
         printf("Aluno %d:\n", i + 1);
 
@@ -45,7 +51,7 @@ int main() {
     for (i = 0; i < n; i++) {
         if (alunos[i].media >= 7.0) {
             printf("Nome: %s, Matrícula: %d, Média: %.2f\n",
-                   alunos[i].nome, alunos[i].matricula, alunos[i].media);
+                alunos[i].nome, alunos[i].matricula, alunos[i].media);
             aprovados++;
         }
     }
