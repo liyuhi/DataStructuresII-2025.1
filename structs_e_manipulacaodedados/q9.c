@@ -2,8 +2,8 @@
 
 Crie uma struct Contato e permita adicionar, buscar por nome e exibir todos os contatos.*/
 
-#include <stdio.h>
-#include <string.h>
+#include<stdio.h>
+#include<string.h>
 
 // Tamanho máximo para nome do contato
 #define max_nome 100       
