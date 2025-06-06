@@ -1,4 +1,4 @@
-/*Modifique a estrutura para guardar dados dos alunos com os seguintes campos:
+/*2. Modifique a estrutura para guardar dados dos alunos com os seguintes campos:
 • Nome
 • Matrícula
 • Nota*/
