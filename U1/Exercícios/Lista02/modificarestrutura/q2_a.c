@@ -1,4 +1,4 @@
-//Implemente a estrutura de dados para a árvore binária de busca.
+//2. a) Implemente a estrutura de dados para a árvore binária de busca.
 
 typedef struct Aluno {
     char nome[50];           
