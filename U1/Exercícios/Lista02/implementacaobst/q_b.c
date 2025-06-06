@@ -1,4 +1,4 @@
-//1. Implemente as funções de criação, remoção, busca e inserção.
+//b) Implemente as funções de criação, remoção, busca e inserção.
 
 #include <stdio.h>
 #include <stdlib.h>
