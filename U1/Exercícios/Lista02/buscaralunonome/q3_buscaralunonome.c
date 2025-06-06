@@ -1,4 +1,4 @@
-//Implemente um algoritmo para buscar um aluno pelo nome.
+//3. Implemente um algoritmo para buscar um aluno pelo nome.
 
 #include <stdio.h>
 #include <stdlib.h>
