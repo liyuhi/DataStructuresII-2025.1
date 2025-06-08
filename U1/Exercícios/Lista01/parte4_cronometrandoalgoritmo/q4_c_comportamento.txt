@@ -1,0 +1,3 @@
+Questão 4, parte 1, letra C:
+
+ Os resultados obtidos confirmam a análise teórica da complexidade do algoritmo – que é O(2n) para esse algoritmo recursivo de Fibonacci. O crescimento exponencial do tempo de execução é progressivamente mais acentuado à medida que n aumenta, resultando em tempos de processamento que se tornam rapidamente inviáveis.
